@@ -1,10 +1,9 @@
 #[allow(dead_code)]
-fn prime_factors(mut num: i64) -> Vec<i64>{
-    for mut i in 2..num {
-        if num % 2 == 0 {
+fn prime_factors(num: i64) -> Vec<i64>{
+    for i in 2..num {
+        if &num % 2 == 0 {
             return [vec![i], prime_factors(num / i)].concat();
         }
-        i += 1
     }
 
     vec![num]
